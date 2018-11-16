@@ -52,6 +52,8 @@ public class MyGdxGame extends ApplicationAdapter {
     private int count;
     private long myTime = 0;
 
+    int i = 0;
+
 
     @Override
     public void create() {
@@ -157,8 +159,7 @@ public class MyGdxGame extends ApplicationAdapter {
         Iterator<Rectangle> tIterator = toxicRaindrops.iterator();
         while (tIterator.hasNext()) {
             Rectangle drop = tIterator.next();
-            int i = 1;
-            drop.y -= 200 * Gdx.graphics.getDeltaTime() + i;
+            drop.y -= (i + 10) * Gdx.graphics.getDeltaTime();
             i++;
             if (drop.y + drop.height < 0) {
                 tIterator.remove();
